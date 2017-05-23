@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         
         // set up progressbar
         containerView.bringSubview(toFront: progressbar)
-        webview.rx.loading.asDriver(onErrorJustReturn: false).drive(progressbar.rx.appear).addDisposableTo(disposeBag)
+        webview.rx.loading.asDriver(onErrorJustReturn: false).drive(progressbar.rx.isProgressing).addDisposableTo(disposeBag)
         webview.rx.estimatedProgress.map { progress in
             return Float(progress)
         }.asDriver(onErrorJustReturn: 0.0).drive(progressbar.rx.progress).addDisposableTo(disposeBag)

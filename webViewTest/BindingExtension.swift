@@ -25,7 +25,7 @@ extension Reactive where Base: UIProgressView {
         }
     }
     
-    var appear: UIBindingObserver<Base, Bool> {
+    var isProgressing: UIBindingObserver<Base, Bool> {
         return UIBindingObserver(UIElement: base) { progressbar, isProgressing in
             progressbar.isHidden = !isProgressing
         }
