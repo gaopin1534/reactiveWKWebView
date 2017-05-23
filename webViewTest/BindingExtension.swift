@@ -2,8 +2,8 @@
 //  BindingExtension.swift
 //  webViewTest
 //
-//  Created by 高松　幸平 on 2017/05/23.
-//  Copyright © 2017年 高松　幸平. All rights reserved.
+//  Created by gaopin1534 on 2017/05/23.
+//  Copyright © 2017年 gaopin1534. All rights reserved.
 //
 
 import UIKit
