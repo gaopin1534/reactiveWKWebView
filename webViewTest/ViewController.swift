@@ -12,6 +12,10 @@ import RxWebKit
 import RxSwift
 
 class ViewController: UIViewController {
+    @IBOutlet weak var refreshButton: UIToolbar!
+    @IBOutlet weak var forwardButton: UIToolbar!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var toolbar: UIToolbar!
     @IBOutlet weak var containerView: UIView!
     let disposeBag = DisposeBag()

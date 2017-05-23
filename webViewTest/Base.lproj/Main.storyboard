@@ -23,33 +23,62 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VTc-eF-H7Z">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
-                                    <barButtonItem title="Item" id="kSm-db-WAr"/>
+                                    <barButtonItem systemItem="rewind" id="kSm-db-WAr"/>
+                                    <barButtonItem systemItem="fastForward" id="xua-NF-d9K"/>
+                                    <barButtonItem systemItem="flexibleSpace" id="yGd-PN-E51"/>
+                                    <barButtonItem systemItem="refresh" id="wLM-J6-DPB"/>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o38-Bb-Z9u">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="59" width="375" height="564"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmh-OB-Iwy">
+                                <rect key="frame" x="0.0" y="28" width="375" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKn-A5-Tm9">
+                                        <rect key="frame" x="166" y="5" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="BKn-A5-Tm9" firstAttribute="top" secondItem="Mmh-OB-Iwy" secondAttribute="top" constant="5" id="5N5-uD-IbO"/>
+                                    <constraint firstItem="BKn-A5-Tm9" firstAttribute="centerX" secondItem="Mmh-OB-Iwy" secondAttribute="centerX" id="bV8-4K-cbx"/>
+                                    <constraint firstAttribute="bottom" secondItem="BKn-A5-Tm9" secondAttribute="bottom" constant="5" id="oQq-sx-wpT"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="o38-Bb-Z9u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6R0-EM-o8h"/>
                             <constraint firstItem="VTc-eF-H7Z" firstAttribute="top" secondItem="o38-Bb-Z9u" secondAttribute="bottom" id="9dx-l6-OVG"/>
-                            <constraint firstItem="o38-Bb-Z9u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Slu-nr-iC7"/>
-                            <constraint firstAttribute="trailing" secondItem="o38-Bb-Z9u" secondAttribute="trailing" id="TQ8-2n-hos"/>
+                            <constraint firstItem="Mmh-OB-Iwy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="E2M-iT-9cv"/>
+                            <constraint firstAttribute="trailing" secondItem="Mmh-OB-Iwy" secondAttribute="trailing" id="PB8-Tx-x12"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VTc-eF-H7Z" secondAttribute="bottom" id="Uzy-x5-r6B"/>
+                            <constraint firstAttribute="trailing" secondItem="o38-Bb-Z9u" secondAttribute="trailing" id="Vrm-9K-giW"/>
                             <constraint firstItem="VTc-eF-H7Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Xy4-Na-9zl"/>
+                            <constraint firstItem="o38-Bb-Z9u" firstAttribute="top" secondItem="Mmh-OB-Iwy" secondAttribute="bottom" id="Y0l-v1-rpf"/>
                             <constraint firstAttribute="trailing" secondItem="VTc-eF-H7Z" secondAttribute="trailing" id="aLQ-dT-uUw"/>
-                            <constraint firstItem="o38-Bb-Z9u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gx0-MM-e2j"/>
+                            <constraint firstItem="Mmh-OB-Iwy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uKn-eg-3pE"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="kSm-db-WAr" id="wut-Yt-XSt"/>
                         <outlet property="containerView" destination="o38-Bb-Z9u" id="WgH-IW-Ut4"/>
+                        <outlet property="forwardButton" destination="VTc-eF-H7Z" id="HVd-gu-irx"/>
+                        <outlet property="refreshButton" destination="VTc-eF-H7Z" id="4nl-pj-iVa"/>
+                        <outlet property="titleLabel" destination="BKn-A5-Tm9" id="3N7-1t-b48"/>
                         <outlet property="toolbar" destination="VTc-eF-H7Z" id="7f7-kS-0pu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="17" y="35"/>
         </scene>
     </scenes>
 </document>
