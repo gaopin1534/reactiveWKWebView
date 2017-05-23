@@ -24,19 +24,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set up WKWebView
         let webview = WKWebView()
         webview.navigationDelegate = self
         webview.translatesAutoresizingMaskIntoConstraints = false
         containerView.addSubview(webview)
         setUpConstraints(for: webview)
-
+        
+        // load github.com
         let request = URLRequest(url: URL(string: "https://www.github.com")!)
         webview.load(request)
         
+        // bind title to title label
         webview.rx.title.bind(to: titleLabel.rx.text).addDisposableTo(disposeBag)
+        
+        // handle back and forward buttons availablity
         webview.rx.canGoForward.asDriver(onErrorJustReturn: false).drive(forwardButton.rx.isEnabled).addDisposableTo(disposeBag)
         webview.rx.canGoBack.asDriver(onErrorJustReturn: false).drive(backButton.rx.isEnabled).addDisposableTo(disposeBag)
         
+        // define on tap behavior of back, forward and refresh buttons
         backButton.rx.tap.asDriver().drive(onNext: {
             webview.goBack()
         }).addDisposableTo(disposeBag)
@@ -49,6 +55,7 @@ class ViewController: UIViewController {
             webview.reload()
         }).addDisposableTo(disposeBag)
         
+        // set up progressbar
         containerView.bringSubview(toFront: progressbar)
         webview.rx.loading.asDriver(onErrorJustReturn: false).drive(progressbar.rx.appear).addDisposableTo(disposeBag)
         webview.rx.estimatedProgress.map { progress in
@@ -59,7 +66,6 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     private func setUpConstraints(for webview: WKWebView) {
