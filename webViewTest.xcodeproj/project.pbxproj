@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1796E7931ED42EFC00CBFF0A /* BindingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1796E7921ED42EFC00CBFF0A /* BindingExtension.swift */; };
 		17CD37241ECEF003009A4515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD37231ECEF003009A4515 /* AppDelegate.swift */; };
 		17CD37261ECEF003009A4515 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CD37251ECEF003009A4515 /* ViewController.swift */; };
 		17CD37291ECEF003009A4515 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CD37271ECEF003009A4515 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		07A286F1E538F3E26BFD7FE7 /* Pods-webViewTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-webViewTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-webViewTest/Pods-webViewTest.debug.xcconfig"; sourceTree = "<group>"; };
+		1796E7921ED42EFC00CBFF0A /* BindingExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BindingExtension.swift; sourceTree = "<group>"; };
 		17CD37201ECEF002009A4515 /* webViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CD37231ECEF003009A4515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CD37251ECEF003009A4515 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				17CD372A1ECEF003009A4515 /* Assets.xcassets */,
 				17CD372C1ECEF003009A4515 /* LaunchScreen.storyboard */,
 				17CD372F1ECEF003009A4515 /* Info.plist */,
+				1796E7921ED42EFC00CBFF0A /* BindingExtension.swift */,
 			);
 			path = webViewTest;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1796E7931ED42EFC00CBFF0A /* BindingExtension.swift in Sources */,
 				17CD37261ECEF003009A4515 /* ViewController.swift in Sources */,
 				17CD37241ECEF003009A4515 /* AppDelegate.swift in Sources */,
 			);
@@ -602,9 +606,10 @@
 			baseConfigurationReference = 07A286F1E538F3E26BFD7FE7 /* Pods-webViewTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = webViewTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hoge.webViewTest;
+				PRODUCT_BUNDLE_IDENTIFIER = hoge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -615,9 +620,10 @@
 			baseConfigurationReference = A0FBD906EAFECB7080C20474 /* Pods-webViewTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = webViewTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = hoge.webViewTest;
+				PRODUCT_BUNDLE_IDENTIFIER = hoge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -33,13 +33,23 @@
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o38-Bb-Z9u">
                                 <rect key="frame" x="0.0" y="59" width="375" height="564"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pan-Y5-C3x">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
+                                    </progressView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Pan-Y5-C3x" firstAttribute="leading" secondItem="o38-Bb-Z9u" secondAttribute="leading" id="7h8-Fd-yaf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pan-Y5-C3x" secondAttribute="trailing" id="ZUF-Rk-2ye"/>
+                                    <constraint firstItem="Pan-Y5-C3x" firstAttribute="top" secondItem="o38-Bb-Z9u" secondAttribute="top" id="fVs-Nz-dS3"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmh-OB-Iwy">
                                 <rect key="frame" x="0.0" y="28" width="375" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKn-A5-Tm9">
-                                        <rect key="frame" x="166" y="5" width="42" height="21"/>
+                                        <rect key="frame" x="5" y="5" width="365" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -47,7 +57,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="BKn-A5-Tm9" firstAttribute="leading" secondItem="Mmh-OB-Iwy" secondAttribute="leading" constant="5" id="07w-hz-ODm"/>
                                     <constraint firstItem="BKn-A5-Tm9" firstAttribute="top" secondItem="Mmh-OB-Iwy" secondAttribute="top" constant="5" id="5N5-uD-IbO"/>
+                                    <constraint firstAttribute="trailing" secondItem="BKn-A5-Tm9" secondAttribute="trailing" constant="5" id="L63-sY-1Wa"/>
                                     <constraint firstItem="BKn-A5-Tm9" firstAttribute="centerX" secondItem="Mmh-OB-Iwy" secondAttribute="centerX" id="bV8-4K-cbx"/>
                                     <constraint firstAttribute="bottom" secondItem="BKn-A5-Tm9" secondAttribute="bottom" constant="5" id="oQq-sx-wpT"/>
                                 </constraints>
@@ -70,8 +82,9 @@
                     <connections>
                         <outlet property="backButton" destination="kSm-db-WAr" id="wut-Yt-XSt"/>
                         <outlet property="containerView" destination="o38-Bb-Z9u" id="WgH-IW-Ut4"/>
-                        <outlet property="forwardButton" destination="VTc-eF-H7Z" id="HVd-gu-irx"/>
-                        <outlet property="refreshButton" destination="VTc-eF-H7Z" id="4nl-pj-iVa"/>
+                        <outlet property="forwardButton" destination="xua-NF-d9K" id="E5K-oh-k6Y"/>
+                        <outlet property="progressbar" destination="Pan-Y5-C3x" id="1eT-Pc-LNF"/>
+                        <outlet property="refreshButton" destination="wLM-J6-DPB" id="caX-qT-zr5"/>
                         <outlet property="titleLabel" destination="BKn-A5-Tm9" id="3N7-1t-b48"/>
                         <outlet property="toolbar" destination="VTc-eF-H7Z" id="7f7-kS-0pu"/>
                     </connections>

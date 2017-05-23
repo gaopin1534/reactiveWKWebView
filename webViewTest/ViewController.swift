@@ -12,8 +12,9 @@ import RxWebKit
 import RxSwift
 
 class ViewController: UIViewController {
-    @IBOutlet weak var refreshButton: UIToolbar!
-    @IBOutlet weak var forwardButton: UIToolbar!
+    @IBOutlet weak var progressbar: UIProgressView!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var toolbar: UIToolbar!
@@ -29,11 +30,31 @@ class ViewController: UIViewController {
         containerView.addSubview(webview)
         setUpConstraints(for: webview)
 
-        let request = URLRequest(url: URL(string: "https://www.google.com")!)
+        let request = URLRequest(url: URL(string: "https://www.github.com")!)
         webview.load(request)
         
         webview.rx.title.bind(to: titleLabel.rx.text).addDisposableTo(disposeBag)
-
+        webview.rx.canGoForward.asDriver(onErrorJustReturn: false).drive(forwardButton.rx.isEnabled).addDisposableTo(disposeBag)
+        webview.rx.canGoBack.asDriver(onErrorJustReturn: false).drive(backButton.rx.isEnabled).addDisposableTo(disposeBag)
+        
+        backButton.rx.tap.asDriver().drive(onNext: {
+            webview.goBack()
+        }).addDisposableTo(disposeBag)
+        
+        forwardButton.rx.tap.asDriver().drive(onNext: {
+            webview.goForward()
+        }).addDisposableTo(disposeBag)
+        
+        refreshButton.rx.tap.asDriver().drive(onNext: {
+            webview.reload()
+        }).addDisposableTo(disposeBag)
+        
+        containerView.bringSubview(toFront: progressbar)
+        webview.rx.loading.asDriver(onErrorJustReturn: false).drive(progressbar.rx.appear).addDisposableTo(disposeBag)
+        webview.rx.estimatedProgress.map { progress in
+            return Float(progress)
+        }.asDriver(onErrorJustReturn: 0.0).drive(progressbar.rx.progress).addDisposableTo(disposeBag)
+        
     }
 
     override func didReceiveMemoryWarning() {
